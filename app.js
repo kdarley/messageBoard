@@ -11,3 +11,6 @@ app.use((req, res, next) => {
 }); 
 
 app.use('/', indexRouter);
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`listening on port ${PORT}!`));
