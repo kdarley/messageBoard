@@ -20,8 +20,8 @@ const getIndex = asyncHandler(async (req, res) => {
 });
 
 const getMessages = asyncHandler(async (req, res) => {
-    res.render("index", { messages });
-    next();
+    res.render("index", { title: "Mini Messageboard", messages: messages });
+    // next();
 });
 
 
