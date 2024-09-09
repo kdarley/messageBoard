@@ -18,7 +18,7 @@ const messages = [
 const jsonData = JSON.stringify(messages);
 
 function createData() {
-    fs.writeFile("./data/data.json", jsonData, (err) => {
+    fs.writeFileSync("./data/data.json", jsonData, (err) => {
         if (err) {
             console.log("Error writing file", err);
         } else {"Data written successfully"}

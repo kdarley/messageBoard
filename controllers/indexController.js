@@ -1,17 +1,19 @@
 const asyncHandler = require("express-async-handler");
 
-const messages = [
-    {
-      text: "Hi there!",
-      user: "Amando",
-      added: new Date()
-    },
-    {
-      text: "Hello World!",
-      user: "Charles",
-      added: new Date()
-    }
-  ];
+// const messages = [
+//     {
+//       text: "Hi there!",
+//       user: "Amando",
+//       added: new Date()
+//     },
+//     {
+//       text: "Hello World!",
+//       user: "Charles",
+//       added: new Date()
+//     }
+//   ];
+
+const messages = require("../data/data.json");
 
 
 const getIndex = asyncHandler(async (req, res) => {
