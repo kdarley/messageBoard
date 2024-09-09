@@ -1,30 +1,9 @@
 const asyncHandler = require("express-async-handler");
-
-// const messages = [
-//     {
-//       text: "Hi there!",
-//       user: "Amando",
-//       added: new Date()
-//     },
-//     {
-//       text: "Hello World!",
-//       user: "Charles",
-//       added: new Date()
-//     }
-//   ];
-
-const messages = require("../data/data.json");
-
-
-const getIndex = asyncHandler(async (req, res) => {
-    res.send("Hello from the message board app! This is the index page.");
-    next();
-});
+const { getAllMessages } = require("../utils/newPost.js"); // Utility to fetch messages dynamically
 
 const getMessages = asyncHandler(async (req, res) => {
+    const messages = await getAllMessages(); // Fetch messages from the JSON file
     res.render("index", { title: "Mini Messageboard", messages: messages });
-    // next();
 });
 
-
-module.exports = {getIndex, getMessages};
+module.exports = { getMessages };
