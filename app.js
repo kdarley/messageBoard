@@ -1,3 +1,8 @@
+// initialize the database with some dummy data
+const { createData } = require('./utils/createData.js');
+createData();
+
+
 const express = require('express');
 const indexRouter = require('./routes/indexRoute.js');
 const newMessageRouter = require('./routes/newMessageRouter.js');

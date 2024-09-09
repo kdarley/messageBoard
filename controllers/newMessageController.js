@@ -2,8 +2,9 @@ const asyncHandler = require("express-async-handler");
 
 
 const createMessage = asyncHandler(async (req, res) => {
-    res.send("Create a new message here!");
+    res.render("form", { title: "Create Message" });
 });
+
 
 
 module.exports = {createMessage};
